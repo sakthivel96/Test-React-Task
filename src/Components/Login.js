@@ -38,7 +38,7 @@ const Login = () => {
   const [isOnSubmit, setIsOnSubmit] = useState(false);
 
   const setUsernameMet = (event) => {
-    setCount((c) => c + 1);
+    
 
     setUserName(event.target.value);
     if (/^\S+@\S+\.\S+$/.test(event.target.value)) {
