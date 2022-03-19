@@ -126,7 +126,7 @@ const Login = () => {
         <div>Enter Valid Email</div>:null}
         <br />
 
-        <input type="password" placeholder="Password"  
+        <input type="password" placeholder="Password"  onChange={setPasswordMet}
         />
         {!inputState.validPassword?
         <div>Enter Valid Password</div>:null}
