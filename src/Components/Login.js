@@ -2,7 +2,6 @@ import React from "react";
 import "./login.css";
 import { useState, useReducer } from "react";
 import ReactDOM from "react-dom";
-import Input from "./Input";
 
 const valid = (state, action) => {
   switch (action.type) {
@@ -26,7 +25,6 @@ const Login = () => {
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [count, setCount] = useState(0);
 
   const [inputState, dispatch] = useReducer(valid, {
     inputType: "",
