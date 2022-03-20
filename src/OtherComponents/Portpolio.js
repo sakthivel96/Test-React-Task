@@ -2,7 +2,7 @@ import React from "react";
 import "./Portpolio.css";
 import Avatar from "./Avatar";
 import Info from "./Info";
-import Portfolio_Info from "./Portfolio_Info";
+import PortfolioInfo from "./PortfolioInfo";
 
 
 const Portpolio = () => {
@@ -14,7 +14,7 @@ const Portpolio = () => {
         <Avatar />
       </div>
       <Info />
-      <Portfolio_Info/>
+      <PortfolioInfo/>
     </div>
   );
 };

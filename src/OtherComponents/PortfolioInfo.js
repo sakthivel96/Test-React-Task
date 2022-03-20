@@ -1,7 +1,7 @@
 import React from "react";
 import "./Portpolio.css";
 
-const Portfolio_Info = () => {
+const PortfolioInfo = () => {
   return (
     <div>
       <div className="portpolio-info">
@@ -32,4 +32,4 @@ const Portfolio_Info = () => {
   );
 };
 
-export default Portfolio_Info;
+export default PortfolioInfo;
