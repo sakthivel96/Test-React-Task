@@ -2,10 +2,10 @@
 import './App.css';
 
 
-import Portpolio from './OtherComponents/Portpolio'
+import Portfolio from './OtherComponents/Portfolio'
 
 function App() {
-  return <Portpolio/>
+  return <Portfolio/>
 }
 
 export default App;

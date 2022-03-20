@@ -5,11 +5,11 @@ import Info from "./Info";
 import PortfolioInfo from "./PortfolioInfo";
 
 
-const Portpolio = () => {
+const Portfolio = () => {
   return (
     <div>
       <div className="main-heading">
-        <h1>Portpolio</h1>
+        <h1>Portfolio</h1>
         <br />
         <Avatar />
       </div>
@@ -19,4 +19,4 @@ const Portpolio = () => {
   );
 };
 
-export default Portpolio;
+export default Portfolio;
