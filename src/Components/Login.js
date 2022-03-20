@@ -2,87 +2,35 @@ import React from "react";
 import "./login.css";
 import { useState, useReducer } from "react";
 import ReactDOM from "react-dom";
-
-const valid = (state, action) => {
-  switch (action.type) {
-    case "Input":
-      return {
-        ...state,
-        //value: action.val,
-        validEmail: action.isValidEmail,
-        validPassword: action.isValidPassword,
-      };
-    default:
-      return {
-        state,
-      };
-  }
-};
+import Input from "./Input";
 
 const Login = () => {
   const defaultUserName = "admin";
   const defaultPassword = "admin";
 
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-
-  const [inputState, dispatch] = useReducer(valid, {
-    inputType: "",
-    validEmail: true,
-    validPassword: true,
-  });
-
-  //const [emailValidate, setEmailValidate] = useState(true)
-  //const [passwordValidate, setPasswordValidate] = useState(true)
+  const [userName, setUserName] = useState("-");
+  const [password, setPassword] = useState("-");
 
   const [isOnSubmit, setIsOnSubmit] = useState(false);
 
-  const setUsernameMet = (event) => {
-    
-
-    setUserName(event.target.value);
-    if (/^\S+@\S+\.\S+$/.test(event.target.value)) {
-      //setEmailValidate(true)
-      dispatch({ type: "Input", isValidEmail: true });
-    } else {
-      dispatch({ type: "Input", isValidEmail: false });
-      //setEmailValidate(false)
-    }
-  };
-  const setPasswordMet = (event) => {
-    setPassword(event.target.value);
-    if (
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]).{8,15}$/.test(
-        event.target.value
-      )
-    ) {
-      //setPasswordValidate(true)
-      dispatch({
-        type: "Input",
-        isValidPassword: true,
-      });
-    } else {
-      //setPasswordValidate(false)
-      dispatch({
-        type: "Input",
-        isValidPassword: false,
-      });
-    }
-  };
-
   const loginSubmit = (event) => {
     event.preventDefault();
-    if (userName.length === 0 || password.length === 0) {
+    if (
+      userName.length === 0 ||
+      password.length === 0 ||
+      userName === " " ||
+      password === " "
+    ) {
       setIsOnSubmit(false);
-      dispatch({
+      /*dispatch({
         type: "Input",
         isValidEmail: false,
+      });
+      dispatch({
+        type: "InputPassword",
         isValidPassword: false,
       });
-
-      //setEmailValidate(false)
-      //setPasswordValidate(false)
-
+      */
       setUserName(" ");
       setPassword(" ");
     } else setIsOnSubmit(true);
@@ -94,7 +42,6 @@ const Login = () => {
     );
     alert(`UserName and Password not be empty`);
     return ReactDOM.createPortal(content, document.getElementById("alert-div"));
-    
   } else if (
     (userName !== defaultUserName || password !== defaultPassword) &&
     isOnSubmit
@@ -118,16 +65,22 @@ const Login = () => {
     <div className="login-form">
       <p>Login Form test working!!!</p>
       <form onSubmit={loginSubmit}>
-        <input type="text" placeholder="Email" onChange={setUsernameMet} 
+        <Input
+          inputType="Email"
+          placeholderText="Email"
+          errorText="Enter Valid Email"
+          setUserNameValue={setUserName}
         />
-        {!inputState.validEmail?
-        <div>Enter Valid Email</div>:null}
-        <br />
 
-        <input type="password" placeholder="Password"  onChange={setPasswordMet}
+        <div> Name {userName}</div>
+        <br />
+        <Input
+          inputType="Password"
+          placeholderText="Password"
+          errorText="Enter Valid Password"
+          setPasswordValue={setPassword}
         />
-        {!inputState.validPassword?
-        <div>Enter Valid Password</div>:null}
+        <div> Password {password}</div>
         <br />
         <button type="submit" value="Submit">
           Submit

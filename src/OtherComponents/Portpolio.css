@@ -1,0 +1,108 @@
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(119, 72, 72, 1) 0%,
+    rgb(233, 202, 202) 100%
+  );
+  background-color: rgb(116, 94, 94);
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 4px;
+}
+.avatar:hover {
+  vertical-align: middle;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgb(150, 255, 150);
+  border-width: 5px;
+}
+.main-heading {
+  text-align: center;
+  color: rgb(255, 0, 0);
+}
+
+.main-heading h1 {
+  color: rgb(255, 0, 0);
+  background-color: rgb(32, 24, 24);
+  color: linear-gradient(
+    90deg,
+    rgba(233, 202, 202, 0.199) 0%,
+    rgb(119, 72, 72) 100%
+  );
+  padding: 25px;
+}
+
+.avatar-block {
+  background-color: rgb(75, 55, 55);
+  padding: 15px;
+  margin: 0px 7%;
+}
+.avatar-block:hover {
+  background-color: rgb(0, 0, 0);
+  padding: 15px;
+  margin: 0px 4%;
+}
+
+.info-text-block {
+  text-align: left;
+  background-color: rgb(75, 55, 55);
+  padding: 15px;
+  margin:  5% 2%;
+  font-size: medium;
+  color: #000;
+}
+.info-text-block:hover {
+  text-align: left;
+  background-color: rgb(0, 0, 0);
+  padding: 15px;
+  margin:  3% 1%;
+  font-size: large;
+  color: rgb(190, 190, 190);
+}
+
+.portpolio-images {
+  width: 80%;
+  height: 40%;
+}
+.portpolio-images:hover {
+  top: 5%;
+  left: 5%;
+  height: 90%;
+  width: 90%;
+  position: fixed;
+  z-index: 1;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 5px;
+}
+.portpolio-info {
+  width: 80%;
+  text-align: center;
+  background-color: rgb(75, 55, 55);
+  padding: 2%;
+  margin: 0 8%;
+  font-size: medium;
+  color: #000;
+}
+.portpolio-info:hover {
+  width: 80%;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  padding: 4%;
+  margin: 0 8%;
+  font-size: medium;
+  color: rgb(255, 255, 255);
+}
+.portpolio-full-info {
+  text-align: center;
+  color:aqua;
+}
