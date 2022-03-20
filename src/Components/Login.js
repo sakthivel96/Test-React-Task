@@ -1,6 +1,6 @@
 import React from "react";
 import "./login.css";
-import { useState, useReducer } from "react";
+import { useState } from "react";
 import ReactDOM from "react-dom";
 import Input from "./Input";
 
