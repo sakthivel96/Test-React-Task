@@ -32,8 +32,6 @@ const Input = (props) => {
   const setUsernameMet = (event) => {
     setUserName(event.target.value);
 
-    props.setUserNameValue({userName});
-
     if (
       /^\S+@\S+\.\S+$/.test(event.target.value) ||
       event.target.value.length === 0
@@ -46,7 +44,6 @@ const Input = (props) => {
   const setPasswordMet = (event) => {
     setPassword(event.target.value);
 
-    props.setPasswordValue({password})
     if (
       /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]).{8,15}$/.test(
         event.target.value
@@ -65,6 +62,9 @@ const Input = (props) => {
     }
   };
 
+  const inputChangeHandler = (event)=>{
+    console.log(event)
+  }
   if (props.inputType === "Email") {
     return (
       <div>
@@ -72,7 +72,7 @@ const Input = (props) => {
           type="text"
           placeholder={props.placeholderText}
           onChange={setUsernameMet}
-          
+          input={inputChangeHandler}
         />
         {!inputState.validEmail && <div>{props.errorText}</div>}
       </div>

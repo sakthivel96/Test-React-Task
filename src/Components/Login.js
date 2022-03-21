@@ -10,7 +10,7 @@ const Login = () => {
 
   const [userName, setUserName] = useState("-");
   const [password, setPassword] = useState("-");
-
+  console.log(userName)
   const [isOnSubmit, setIsOnSubmit] = useState(false);
 
   const loginSubmit = (event) => {
@@ -61,6 +61,10 @@ const Login = () => {
     return ReactDOM.createPortal(content, document.getElementById("alert-div"));
   }
 
+  const UserNameValueChangeHandler=(value)=>{
+    console.log(value)
+    console.log('coming')
+  }
   return (
     <div className="login-form">
       <p>Login Form test working!!!</p>
@@ -69,10 +73,8 @@ const Login = () => {
           inputType="Email"
           placeholderText="Email"
           errorText="Enter Valid Email"
-          setUserNameValue={setUserName}
+          setUserNameValue={UserNameValueChangeHandler}
         />
-
-        <div> Name {userName}</div>
         <br />
         <Input
           inputType="Password"
@@ -80,7 +82,6 @@ const Login = () => {
           errorText="Enter Valid Password"
           setPasswordValue={setPassword}
         />
-        <div> Password {password}</div>
         <br />
         <button type="submit" value="Submit">
           Submit
