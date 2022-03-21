@@ -68,9 +68,11 @@ const Input = (props) => {
   };
 
   const inputEmailChangeHandler = (val) => {
+    props.input(userName)
     props.input(val)
   }
   const inputPasswordChangeHandler = (val) => {
+    props.input(password)
     props.input(val)
   }
   if (props.inputType === "Email") {

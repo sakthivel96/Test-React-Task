@@ -1,11 +1,11 @@
 import React from "react";
 import "./Portpolio.css";
 
-const Info = () => {
+const Info = (props) => {
   return (
     <div className="info-text-block">
-      <h3>Description</h3>
-      <p> This is sakthivel Indie Developer...</p>
+      <h3>{props.Description}</h3>
+      <p>{props.Content}</p>
     </div>
   );
 };

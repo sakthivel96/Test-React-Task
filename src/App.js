@@ -1,13 +1,13 @@
 
 import './App.css';
-import Login from './Components/Login';
+//import Login from './Components/Login';
 
 
-//import Portfolio from './OtherComponents/Portfolio'
+import Portfolio from './OtherComponents/Portfolio'
 
 
 function App() {
-  return <Login/>
+  return <Portfolio/>
 }
 
 export default App;
