@@ -1,4 +1,4 @@
-import React,{ useState, useReducer } from "react";
+import React, { useState, useReducer } from "react";
 
 const valid = (state, action) => {
   switch (action.type) {
@@ -30,7 +30,9 @@ const Input = (props) => {
   });
 
   const setUsernameMet = (event) => {
+    //parentToChild(event.target.value);
     setUserName(event.target.value);
+    inputEmailChangeHandler(event.target.value)
 
     if (
       /^\S+@\S+\.\S+$/.test(event.target.value) ||
@@ -40,9 +42,11 @@ const Input = (props) => {
     } else {
       dispatch({ type: "Input", isValidEmail: false });
     }
+    
   };
   const setPasswordMet = (event) => {
     setPassword(event.target.value);
+    inputPasswordChangeHandler(event.target.value)
 
     if (
       /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]).{8,15}$/.test(
@@ -60,10 +64,14 @@ const Input = (props) => {
         isValidPassword: false,
       });
     }
+    
   };
 
-  const inputChangeHandler = (event)=>{
-    console.log(event)
+  const inputEmailChangeHandler = (val) => {
+    props.input(val)
+  }
+  const inputPasswordChangeHandler = (val) => {
+    props.input(val)
   }
   if (props.inputType === "Email") {
     return (
@@ -72,7 +80,6 @@ const Input = (props) => {
           type="text"
           placeholder={props.placeholderText}
           onChange={setUsernameMet}
-          input={inputChangeHandler}
         />
         {!inputState.validEmail && <div>{props.errorText}</div>}
       </div>
@@ -85,13 +92,12 @@ const Input = (props) => {
           type="password"
           placeholder={props.placeholderText}
           onChange={setPasswordMet}
-          
         />
         {!inputState.validPassword && <div>{props.errorText}</div>}
       </div>
     );
   }
-  
+
 };
 
 export default Input;

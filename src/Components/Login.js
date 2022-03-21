@@ -8,19 +8,14 @@ const Login = () => {
   const defaultUserName = "admin";
   const defaultPassword = "admin";
 
-  const [userName, setUserName] = useState("-");
-  const [password, setPassword] = useState("-");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
   console.log(userName)
   const [isOnSubmit, setIsOnSubmit] = useState(false);
 
   const loginSubmit = (event) => {
     event.preventDefault();
-    if (
-      userName.length === 0 ||
-      password.length === 0 ||
-      userName === " " ||
-      password === " "
-    ) {
+    if ((userName.trim()).length === 0 || (password.trim()).length === 0) {
       setIsOnSubmit(false);
       /*dispatch({
         type: "Input",
@@ -61,10 +56,6 @@ const Login = () => {
     return ReactDOM.createPortal(content, document.getElementById("alert-div"));
   }
 
-  const UserNameValueChangeHandler=(value)=>{
-    console.log(value)
-    console.log('coming')
-  }
   return (
     <div className="login-form">
       <p>Login Form test working!!!</p>
@@ -73,16 +64,18 @@ const Login = () => {
           inputType="Email"
           placeholderText="Email"
           errorText="Enter Valid Email"
-          setUserNameValue={UserNameValueChangeHandler}
+          input={setUserName}
         />
         <br />
-        <Input 
+
+        <Input
           inputType="Password"
           placeholderText="Password"
           errorText="Enter Valid Password"
-          setPasswordValue={setPassword}
+          input={setPassword}
         />
         <br />
+
         <button type="submit" value="Submit">
           Submit
         </button>
