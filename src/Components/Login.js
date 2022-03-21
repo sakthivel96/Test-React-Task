@@ -76,7 +76,7 @@ const Login = () => {
           setUserNameValue={UserNameValueChangeHandler}
         />
         <br />
-        <Input
+        <Input 
           inputType="Password"
           placeholderText="Password"
           errorText="Enter Valid Password"
