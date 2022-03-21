@@ -81,7 +81,6 @@ const Input = (props) => {
           placeholder={props.placeholderText}
           onChange={setUsernameMet}
         />
-        Name {userName}
         {!inputState.validEmail && <div>{props.errorText}</div>}
       </div>
     );
