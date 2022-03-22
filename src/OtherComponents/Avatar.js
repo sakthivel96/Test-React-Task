@@ -16,7 +16,7 @@ const Avatar = (props) => {
       <br />
         <a href="https://www.linkedin.com/in/sakthivel-panneerselvam-%E2%9C%93-503529149/">
           <img
-            src="https://cdn-icons.flaticon.com/png/512/2875/premium/2875435.png?token=exp=1647890863~hmac=d62e62481acaf05eb28bf4e7d0fe65bc"
+            src="https://cdn-icons-png.flaticon.com/512/124/124021.png"
             width="6%"
             height="6%"
             alt="LinkedIn"
